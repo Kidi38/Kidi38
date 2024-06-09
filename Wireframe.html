@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fruits & Vegetables</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #eee;
+  }
+  .header h1 {
+    font-size: 20px;
+  }
+  .menu-icon, .search-icon {
+    font-size: 24px;
+  }
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+  }
+  .product {
+    width: 45%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+  }
+  .product img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  .product p {
+    margin: 5px 0;
+  }
+  .quantity-controls button{
+    color: white;
+    background-color: #4CAF50;
+  }
+  .add-to-cart {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="menu-icon">☰</div>
+  <h1>Fruits & Vegetables</h1>
+  <div class="search-icon">🔍</div>
+</div>
+
+<div class="products">
+  <!-- Repeat this block for each product -->
+  <div class="product">
+    <img src="banana.png" alt="Banana">
+    <p>Banana</p>
+    <p>by weight $1.32 kg</p>
+    <p>$1.32</p>
+    <div class="quantity-controls">
+        <button onclick="decreaseQuantity(this)">-</button>
+        <span class="quantity">0</span>
+        <button onclick="increaseQuantity(this)">+</button>
+      </div>
+  </div>
+  <!-- ... other products ... -->
+  <div class="product">
+    <img src="cabbage.png" alt="Cabbage">
+    <p>Cabbage</p>
+    <p>by weight $0.82 kg</p>
+    <p>$0.82</p>
+    <div class="quantity-controls">
+        <button onclick="decreaseQuantity(this)">-</button>
+        <span class="quantity">0</span>
+        <button onclick="increaseQuantity(this)">+</button>
+      </div>
+  </div>
+  <!-- ... other products ... -->
+  <div class="product">
+    <img src="Tomatoe.png" alt="Tomatto">
+    <p>Tomatto</p>
+    <p>by weight $1.23 kg</p>
+    <p>$1.23</p>
+    <div class="quantity-controls">
+        <button onclick="decreaseQuantity(this)">-</button>
+        <span class="quantity">0</span>
+        <button onclick="increaseQuantity(this)">+</button>
+      </div>
+  </div>
+  <!-- ... other products ... -->
+  <div class="product">
+    <img src="Egg plant.png".jpg" alt="egg plant">
+    <p>Egg plant</p>
+    <p>by weight $0.82 kg</p>
+    <p>$0.82</p>
+    <div class="quantity-controls">
+        <button onclick="decreaseQuantity(this)">-</button>
+        <span class="quantity">0</span>
+        <button onclick="increaseQuantity(this)">+</button>
+      </div>
+  </div>
+  <!-- ... other products ... -->
+</div>
+
+<script>
+    function increaseQuantity(button) {
+      const quantitySpan = button.previousElementSibling;
+      let quantity = parseInt(quantitySpan.textContent);
+      quantity++;
+      quantitySpan.textContent = quantity;
+    }
+  
+    function decreaseQuantity(button) {
+      const quantitySpan = button.nextElementSibling;
+      let quantity = parseInt(quantitySpan.textContent);
+      if (quantity > 0) {
+        quantity--;
+        quantitySpan.textContent = quantity;
+      }
+    }
+  </script>
+</body>
+</html>
